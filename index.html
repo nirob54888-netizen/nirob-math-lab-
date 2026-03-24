@@ -1,107 +1,45 @@
-  - Full-width banner with the coaching center name 「Nirab Math Lab」, a compelling tagline (e.g., 「Building Strong Foundations in Math & Science」), and a prominent Call-to-Action button: 「Apply for Admission」 linking to the Admission Registration Page.
-- **Highlights Section**
-  - Three to four visually distinct cards showcasing key strengths (e.g., Expert Teaching, Small Batch Sizes, Proven Results, Focused Curriculum).
-- **Subjects at a Glance**
-  - Brief visual summary of subjects offered across Class 8–10.
-- **Call-to-Action Banner**
-  - A mid-page banner encouraging visitors to register, with a button linking to the Admission Registration Page.
-- **Footer**
-  - Center name, quick navigation links, and contact details.
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirob Math Lab - Official Website</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; text-align: center; }
+        header { background: #2c3e50; color: white; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { margin: 0; font-size: 2.5rem; }
+        .course-card { border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 8px; background: #f9f9f9; }
+        .btn { display: inline-block; background: #27ae60; color: white; padding: 15px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
+        footer { margin-top: 40px; padding: 20px; color: #7f8c8d; font-size: 14px; }
+    </style>
+</head>
+<body>
 
-### 3.3 About Page
+<header>
+    <h1>Nirob Math Lab</h1>
+    <p>গণিত ও বিজ্ঞানের এক নির্ভরযোগ্য প্রতিষ্ঠান</p>
+</header>
 
-- Overview of Nirab Math Lab: mission, teaching philosophy, and background.
-- Brief description of the teaching approach and commitment to student success.
-- Visual layout with text and decorative elements to maintain aesthetic appeal.
+<div class="container">
+    <h2>আমাদের কোর্সসমূহ</h2>
+    
+    <div class="course-card">
+        <h3>৮ম শ্রেণী (Class 8)</h3>
+        <p>সাধারণ গণিত ও বিজ্ঞান। সৃজনশীল প্রশ্নের ওপর বিশেষ গুরুত্ব।</p>
+    </div>
 
-### 3.4 Courses Page
+    <div class="course-card">
+        <h3>৯ম - ১০ম শ্রেণী (SSC 26)</h3>
+        <p>পদার্থবিজ্ঞান, রসায়ন ও উচ্চতর গণিত। পূর্ণাঙ্গ বোর্ড প্রস্তুতি।</p>
+    </div>
 
-- Clearly structured course listing organized by class level:
-  - **Class 8:** Mathematics, Science (General)
-  - **Class 9–10:** Physics, Chemistry, Higher Mathematics
-- Each course card includes:
-  - Subject name
-  - Target class (e.g., Class 9–10)
-  - Brief description of what is covered
-- A 「Register Now」 button at the bottom of the page linking to the Admission Registration Page.
+    <a href="#" class="btn">ভর্তির জন্য যোগাযোগ করুন</a>
+</div>
 
-### 3.5 Admission Registration Page
+<footer>
+    <p>&copy; 2026 Nirob Math Lab. All Rights Reserved.</p>
+</footer>
 
-- **Page Heading:** 「Student Admission Registration」
-- **Registration Form Fields:**
-  - Student Full Name (text input, required)
-  - Parent/Guardian Name (text input, required)
-  - Contact Number (phone input, required)
-  - Email Address (email input, optional)
-  - Current Class (dropdown: Class 8 / Class 9 / Class 10, required)
-  - Subject(s) to Enroll In (checkbox group, required):
-    - Mathematics (available for Class 8, 9, 10)
-    - Science — General (available for Class 8)
-    - Physics (available for Class 9, 10)
-    - Chemistry (available for Class 9, 10)
-    - Higher Mathematics (available for Class 9, 10)
-  - Additional Message / Query (textarea, optional)
-- **Submit Button:** 「Submit Registration」
-- On successful submission: display an on-screen confirmation message — 「Thank you! Your registration has been received. We will contact you shortly.\"
-- All submitted registration data is stored in the backend database for the center's review.
-
-### 3.6 Contact Page
-
-- Simple contact section with:
-  - A brief invitation to reach out for queries.
-  - Placeholder for address, phone number, and email (to be filled in by the owner).
-  - A basic contact inquiry form:
-    - Name (required)
-    - Phone/Email (required)
-    - Message (required)
-    - Submit button
-  - Contact inquiry submissions are stored in the backend database.
-
----
-
-## 4. Business Rules & Logic
-
-- The Subject(s) checkbox options on the registration form must dynamically reflect the selected class:
-  - Class 8: show Mathematics, Science — General
-  - Class 9 or Class 10: show Physics, Chemistry, Higher Mathematics
-  - If the user changes the class selection, the subject options update accordingly and previously checked incompatible subjects are deselected.
-- At least one subject must be selected before the form can be submitted.
-- All required fields must be validated before submission is allowed.
-
----
-
-## 5. Exceptions & Edge Cases
-
-| Scenario | Handling |
-|---|---|
-| Required field left empty | Highlight the field with an error message: 「This field is required」 |
-| Invalid phone number format | Show inline error: 「Please enter a valid contact number」 |
-| Invalid email format (if provided) | Show inline error: 「Please enter a valid email address」 |
-| No subject selected | Show error: 「Please select at least one subject」 |
-| Form submission fails (network error) | Show message: 「Submission failed. Please try again.」 |
-| Duplicate submission (same name + phone) | Accept and store; no duplicate blocking at this stage |
-
----
-
-## 6. Acceptance Criteria
-
-- All five pages are accessible via the navigation bar and render correctly.
-- The Home Page hero section displays the center name, tagline, and a working CTA button.
-- The Courses Page correctly lists subjects grouped by class level.
-- The Registration Form validates all required fields before allowing submission.
-- Subject checkboxes update dynamically based on the selected class.
-- Successful form submission stores data in the backend and displays a confirmation message.
-- The website has a consistent, professional, and visually appealing design throughout.
-- The Contact Page form submits and stores inquiries in the backend.
-
----
-
-## 7. Out of Scope for This Version
-
-- Student login portal or dashboard
-- Online fee payment or billing system
-- Admin panel for managing registrations
-- Automated email/SMS notifications upon registration
-- Attendance tracking or result management
-- Blog or news section
-- Multi-language support
+</body>
+</html>
