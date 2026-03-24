@@ -1,0 +1,143 @@
+# Requirements Document
+
+## 1. Application Overview
+
+- **Application Name:** Nirab Math Lab — Official Website
+- **Description:** A professional, visually appealing website for Nirab Math Lab coaching center, designed to showcase the center's offerings and enable prospective students to submit admission registration requests online.
+
+---
+
+## 2. Users & Use Cases
+
+- **Target Users:** Students in Class 8–10 and their parents/guardians seeking quality coaching in Math and Science subjects.
+- **Core Use Cases:**
+  - Visitors browse the website to learn about the coaching center, subjects offered, and class structure.
+  - Prospective students or parents fill out and submit an online admission registration form.
+
+---
+
+## 3. Page Structure & Core Features
+
+### 3.1 Page Overview
+
+```
+Nirab Math Lab Website
+├── Home Page
+├── About Page
+├── Courses Page
+├── Admission Registration Page
+└── Contact Page
+```
+
+### 3.2 Home Page
+
+- **Navigation Bar**
+  - Logo/name on the left; links to Home, About, Courses, Admission, Contact on the right.
+- **Hero Section**
+  - Full-width banner with the coaching center name 「Nirab Math Lab」, a compelling tagline (e.g., 「Building Strong Foundations in Math & Science」), and a prominent Call-to-Action button: 「Apply for Admission」 linking to the Admission Registration Page.
+- **Highlights Section**
+  - Three to four visually distinct cards showcasing key strengths (e.g., Expert Teaching, Small Batch Sizes, Proven Results, Focused Curriculum).
+- **Subjects at a Glance**
+  - Brief visual summary of subjects offered across Class 8–10.
+- **Call-to-Action Banner**
+  - A mid-page banner encouraging visitors to register, with a button linking to the Admission Registration Page.
+- **Footer**
+  - Center name, quick navigation links, and contact details.
+
+### 3.3 About Page
+
+- Overview of Nirab Math Lab: mission, teaching philosophy, and background.
+- Brief description of the teaching approach and commitment to student success.
+- Visual layout with text and decorative elements to maintain aesthetic appeal.
+
+### 3.4 Courses Page
+
+- Clearly structured course listing organized by class level:
+  - **Class 8:** Mathematics, Science (General)
+  - **Class 9–10:** Physics, Chemistry, Higher Mathematics
+- Each course card includes:
+  - Subject name
+  - Target class (e.g., Class 9–10)
+  - Brief description of what is covered
+- A 「Register Now」 button at the bottom of the page linking to the Admission Registration Page.
+
+### 3.5 Admission Registration Page
+
+- **Page Heading:** 「Student Admission Registration」
+- **Registration Form Fields:**
+  - Student Full Name (text input, required)
+  - Parent/Guardian Name (text input, required)
+  - Contact Number (phone input, required)
+  - Email Address (email input, optional)
+  - Current Class (dropdown: Class 8 / Class 9 / Class 10, required)
+  - Subject(s) to Enroll In (checkbox group, required):
+    - Mathematics (available for Class 8, 9, 10)
+    - Science — General (available for Class 8)
+    - Physics (available for Class 9, 10)
+    - Chemistry (available for Class 9, 10)
+    - Higher Mathematics (available for Class 9, 10)
+  - Additional Message / Query (textarea, optional)
+- **Submit Button:** 「Submit Registration」
+- On successful submission: display an on-screen confirmation message — 「Thank you! Your registration has been received. We will contact you shortly.\"
+- All submitted registration data is stored in the backend database for the center's review.
+
+### 3.6 Contact Page
+
+- Simple contact section with:
+  - A brief invitation to reach out for queries.
+  - Placeholder for address, phone number, and email (to be filled in by the owner).
+  - A basic contact inquiry form:
+    - Name (required)
+    - Phone/Email (required)
+    - Message (required)
+    - Submit button
+  - Contact inquiry submissions are stored in the backend database.
+
+---
+
+## 4. Business Rules & Logic
+
+- The Subject(s) checkbox options on the registration form must dynamically reflect the selected class:
+  - Class 8: show Mathematics, Science — General
+  - Class 9 or Class 10: show Physics, Chemistry, Higher Mathematics
+  - If the user changes the class selection, the subject options update accordingly and previously checked incompatible subjects are deselected.
+- At least one subject must be selected before the form can be submitted.
+- All required fields must be validated before submission is allowed.
+
+---
+
+## 5. Exceptions & Edge Cases
+
+| Scenario | Handling |
+|---|---|
+| Required field left empty | Highlight the field with an error message: 「This field is required」 |
+| Invalid phone number format | Show inline error: 「Please enter a valid contact number」 |
+| Invalid email format (if provided) | Show inline error: 「Please enter a valid email address」 |
+| No subject selected | Show error: 「Please select at least one subject」 |
+| Form submission fails (network error) | Show message: 「Submission failed. Please try again.」 |
+| Duplicate submission (same name + phone) | Accept and store; no duplicate blocking at this stage |
+
+---
+
+## 6. Acceptance Criteria
+
+- All five pages are accessible via the navigation bar and render correctly.
+- The Home Page hero section displays the center name, tagline, and a working CTA button.
+- The Courses Page correctly lists subjects grouped by class level.
+- The Registration Form validates all required fields before allowing submission.
+- Subject checkboxes update dynamically based on the selected class.
+- Successful form submission stores data in the backend and displays a confirmation message.
+- The website has a consistent, professional, and visually appealing design throughout.
+- The Contact Page form submits and stores inquiries in the backend.
+
+---
+
+## 7. Out of Scope for This Version
+
+- Student login portal or dashboard
+- Online fee payment or billing system
+- Admin panel for managing registrations
+- Automated email/SMS notifications upon registration
+- Attendance tracking or result management
+- Blog or news section
+- Multi-language support
